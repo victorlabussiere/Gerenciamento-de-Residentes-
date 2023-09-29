@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  html {
+    @apply h-full;
+  }
+
+  body {
+    @apply flex flex-col bg-gray-300 h-full;
+  }
+
+  main {
+    @apply flex items-center justify-center gap-3 w-full h-full mt-2;
+  }
+
+  section {
+    @apply flex flex-col items-center gap-5 w-full h-full pt-16 py-6 z-20 bg-white shadow-md;
+  }
+
+  .aside_menu__container {
+    @apply fixed top-0 left-0 z-20 bg-white h-screen w-2/5 shadow-md py-20 px-6 flex flex-col gap-4 transition-all duration-200;
+  }
+
+  .aside_menu__list > li + li {
+    @apply border-t border-t-slate-300;
+  }
+
+  .hide_aside_menu {
+    @apply transition-all duration-200;
+    left: -40%;
+  }
+
+  .hideModal {
+    display: none;
+    visibility: hidden;
+    max-width: 0;
+    max-height: 0;
+  }
+
+  .hoverButton:hover {
+    transform: scale(1.01);
+    @apply shadow-md cursor-pointer;
+  }
+
+  .hideSubmenu {
+    @apply hidden w-0 h-0 invisible;
+  }
+
+  hr {
+    @apply w-full;
+  }
+}
