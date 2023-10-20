@@ -38,10 +38,10 @@ App::bind('Core\Router', function () {
     $router->get('/usuarios/cadastro', 'usuarios/create/create.php')->only('auth')->passport('chefe_setor');
     $router->post('/usuarios/cadastro', 'usuarios/create/store.php')->only('auth')->passport('chefe_setor');
 
-    // LOGIN
-    $router->get('/auth', 'auth/login.php')->only('guest');
-    $router->post('/auth', 'auth/authenticate.php')->only('guest');
-    $router->delete('/auth', 'auth/logoff.php')->only('auth');
+    // AUTHENTICATIONS
+    $router->get('/auth', 'auth/index.php')->only('guest');
+    $router->post('/auth', 'auth/create.php')->only('guest');
+    $router->delete('/auth', 'auth/delete.php')->only('auth');
 
     // API
     $router->get('/api/residentes', 'api/residentes/index.php');

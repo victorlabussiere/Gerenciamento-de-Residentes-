@@ -4,7 +4,7 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 <!-- TOPBAR -->
 <nav class="fixed top-0 left-0 w-full flex items-center justify-between px-6 bg-sky-800 text-neutral-50 z-40">
     <header class='font-semibold text-lg flex items-center gap-3'>
-        HFSE
+        Hospital
     </header>
 
     <ul class='flex items-center'>
@@ -41,17 +41,21 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
     <script>
         // Display submenu "Minha Conta"
-        const minhaConta = document.querySelector('li.minhaConta')
-        const submenuMinhaConta = minhaConta.querySelector('#submenu')
+        const parentMinhaConta = document.querySelector('li.minhaConta')
 
-        // exibir submenu
-        minhaConta.addEventListener('mouseenter', () => {
-            submenuMinhaConta.classList.toggle('hideModal')
-        })
+        if (parentMinhaConta != null) {
+            const submenuMinhaConta = parentMinhaConta.querySelector('#submenu')
 
-        minhaConta.addEventListener('mouseleave', () => {
-            submenuMinhaConta.classList.toggle('hideModal')
-        })
+            // exibir submenu
+            parentMinhaConta.addEventListener('mouseenter', () => {
+                submenuMinhaConta.classList.toggle('hideModal')
+            })
+
+            parentMinhaConta.addEventListener('mouseleave', () => {
+                submenuMinhaConta.classList.toggle('hideModal')
+            })
+
+        }
     </script>
 </nav>
 
